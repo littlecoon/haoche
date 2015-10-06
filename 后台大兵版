@@ -1,0 +1,22 @@
+PutAttachment ".\plugin","DBSoft.dll"
+    //上面的这行用于按键精灵8中释放附件中的大兵插件（前提是你已经打包附件），如果没有打包，这行没必要写
+    Call Plugin.DBSoft.RegDBSoft("934AA748840647F9359BB04EF5EBB171")
+// 获取窗口句柄
+Hwnd = Plugin.Window.Find("AfxFrameOrView70u", 0)
+temp = Plugin.Window.FindEx(Hwnd, 0, "AfxWnd70u", 0)
+Hwnd1 = Plugin.Window.FindEx(Hwnd, temp, "AfxWnd70u", 0)
+// Hwnd1=Plugin.DBSoft.GetWindowsInfo(temp,5)
+// MsgBox "查找到的父窗口句柄为："& Hwnd1
+//判断是否是下注时间
+While 1
+Color1 = Plugin.Bkgnd.GetPixelColor(Hwnd, 333, 689)
+If Color1 = "F3EDD7" Then 
+	//MsgBox Color1
+	call Plugin.DBSoft.LeftClick(Hwnd1,987, 670)
+	Delay 1000
+	call Plugin.DBSoft.LeftClick(Hwnd1,702, 574)
+	Delay 19000
+Else 
+	Delay 1000
+End If
+Wend
