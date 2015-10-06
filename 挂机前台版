@@ -1,0 +1,16 @@
+For 10000
+IfColor 505, 691, "E9E2CD", 0 Then
+MoveTo 1169, 677
+LeftClick 1
+Delay 1000
+MoveTo 872, 553
+LeftClick 1
+Delay 500
+LeftClick 1
+Delay 500
+LeftClick 1
+Delay 18000
+Else 
+delay 1000
+End If
+Next
