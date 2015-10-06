@@ -1,0 +1,19 @@
+// 获取窗口句柄
+Hwnd = Plugin.Window.Find("AfxFrameOrView70u", 0)
+temp = Plugin.Window.FindEx(Hwnd, 0, "AfxWnd70u", 0)
+Hwnd1 = Plugin.Window.FindEx(Hwnd, temp, "AfxWnd70u", 0)
+// Hwnd1=Plugin.DBSoft.GetWindowsInfo(temp,5)
+// MsgBox "查找到的父窗口句柄为："& Hwnd1
+//判断是否是下注时间
+While 1
+Color1 = Plugin.Bkgnd.GetPixelColor(Hwnd, 333, 689)
+If Color1 = "F3EDD7" Then 
+	//MsgBox Color1
+	Call Plugin.Bkgnd.LeftClick(Hwnd1,987, 670)	 //1万筹码版
+	Delay 1000
+	Call Plugin.Bkgnd.LeftClick(Hwnd1,702, 574)
+	Delay 19000
+Else 
+	Delay 1000
+End If
+Wend
