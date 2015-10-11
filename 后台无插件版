@@ -8,7 +8,8 @@ Hwnd1 = Plugin.Window.FindEx(Hwnd, temp, "AfxWnd70u", 0)  //因为在hwnd下有�
 While 1
 Color1 = Plugin.Bkgnd.GetPixelColor(Hwnd, 333, 689)
 If Color1 = "F3EDD7" Then 
-	//MsgBox Color1
+	Color2 = Plugin.Bkgnd.GetPixelColor(Hwnd, 244, 369)
+	Call Plugin.File.WriteFileEx("c:record.txt",color2)
 	Call Plugin.Bkgnd.LeftClick(Hwnd1,980, 470)	 
 	Delay 500
 	Call Plugin.Bkgnd.LeftClick(Hwnd1, 700, 250)//先择投注车型
