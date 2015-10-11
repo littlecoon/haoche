@@ -1,17 +1,17 @@
-// 获取窗口句柄
+//投注坐标：路虎 550 250  宝马 700 250 法拉利 500 360 宾利 749 351 兰博基尼 514 453保时捷 716 459  捷豹 580 560  奔驰 700 560
+//1万筹码坐标：980 670   10万筹码坐标：980  600    100万筹码坐标：980  540   500万筹码坐标  980  470
+// 获取主窗口句柄
 Hwnd = Plugin.Window.Find("AfxFrameOrView70u", 0)
+//获取投注窗口句柄
 temp = Plugin.Window.FindEx(Hwnd, 0, "AfxWnd70u", 0)
-Hwnd1 = Plugin.Window.FindEx(Hwnd, temp, "AfxWnd70u", 0)
-// Hwnd1=Plugin.DBSoft.GetWindowsInfo(temp,5)
-// MsgBox "查找到的父窗口句柄为："& Hwnd1
-//判断是否是下注时间
+Hwnd1 = Plugin.Window.FindEx(Hwnd, temp, "AfxWnd70u", 0)  //因为在hwnd下有两个相同类名的窗口，第二个才是需要找到的。
 While 1
 Color1 = Plugin.Bkgnd.GetPixelColor(Hwnd, 333, 689)
 If Color1 = "F3EDD7" Then 
 	//MsgBox Color1
-	Call Plugin.Bkgnd.LeftClick(Hwnd1,987, 670)	 //1万筹码版
-	Delay 1000
-	Call Plugin.Bkgnd.LeftClick(Hwnd1,702, 574)
+	Call Plugin.Bkgnd.LeftClick(Hwnd1,980, 470)	 
+	Delay 500
+	Call Plugin.Bkgnd.LeftClick(Hwnd1, 700, 250)//先择投注车型
 	Delay 19000
 Else 
 	Delay 1000
